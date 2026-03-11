@@ -2,7 +2,7 @@
 
 Marketing landing page for **Agent Secrets Vault** by [Aegis](https://github.com/Agent-secrets-vault).
 
-Live: https://agent-secrets-vault.github.io/agent-secrets-vault/
+Live: https://agent-secrets-vault.github.io/asv-landing/
 
 ---
 
@@ -19,7 +19,7 @@ Live: https://agent-secrets-vault.github.io/agent-secrets-vault/
 
 ```bash
 npm install
-npm run dev        # http://localhost:5173/agent-secrets-vault/
+npm run dev        # http://localhost:5173/asv-landing/
 ```
 
 ## Build
