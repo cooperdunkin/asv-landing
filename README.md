@@ -2,7 +2,7 @@
 
 Marketing landing page for **Agent Secrets Vault** by [Aegis](https://github.com/Agent-secrets-vault).
 
-Live: https://agent-secrets-vault.github.io/asv-landing/
+Live: https://cooperdunkin.github.io/asv-landing/
 
 ---
 
