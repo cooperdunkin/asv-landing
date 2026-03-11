@@ -3,17 +3,23 @@ import { Spotlight } from '../components/aceternity/Spotlight'
 
 export default function WaitlistSection() {
   const [submitted, setSubmitted] = useState(false)
+  const [error, setError] = useState(false)
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
+    setError(false)
     const form = e.currentTarget
     const data = new FormData(form)
-    await fetch('https://buttondown.com/api/emails/embed-subscribe/cooperdunkin', {
-      method: 'POST',
-      body: data,
-      mode: 'no-cors',
-    })
-    setSubmitted(true)
+    try {
+      await fetch('https://buttondown.com/api/emails/embed-subscribe/cooperdunkin', {
+        method: 'POST',
+        body: data,
+        mode: 'no-cors',
+      })
+      setSubmitted(true)
+    } catch {
+      setError(true)
+    }
   }
 
   return (
@@ -65,6 +71,11 @@ export default function WaitlistSection() {
             </form>
           )}
 
+          {error && (
+            <p className="font-mono text-xs text-red-400 mb-3">
+              Something went wrong. Try again or email us directly.
+            </p>
+          )}
           <p className="text-xs text-[--color-muted]">
             No spam. Unsubscribe anytime. Early access invite when Pro ships.
           </p>

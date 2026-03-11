@@ -71,7 +71,7 @@ export default function Nav() {
         {/* Mobile menu */}
         <Dialog.Root open={mobileOpen} onOpenChange={setMobileOpen}>
           <Dialog.Trigger asChild>
-            <button className="md:hidden text-[--color-muted] hover:text-[--color-text] transition-colors p-1">
+            <button aria-label="Open menu" className="md:hidden text-[--color-muted] hover:text-[--color-text] transition-colors p-1">
               <Menu size={20} />
             </button>
           </Dialog.Trigger>
@@ -81,7 +81,7 @@ export default function Nav() {
               <div className="flex items-center justify-between mb-8">
                 <span className="font-semibold text-[--color-text]">Menu</span>
                 <Dialog.Close asChild>
-                  <button className="text-[--color-muted] hover:text-[--color-text] transition-colors">
+                  <button aria-label="Close menu" className="text-[--color-muted] hover:text-[--color-text] transition-colors">
                     <X size={18} />
                   </button>
                 </Dialog.Close>

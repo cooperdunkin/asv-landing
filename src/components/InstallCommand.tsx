@@ -32,13 +32,13 @@ export default function InstallCommand({ className }: InstallCommandProps) {
         'transition-colors hover:border-[--color-accent]/40 max-w-full overflow-hidden',
         className
       )}
-      title="Click to copy"
+      aria-label={copied ? 'Copied' : 'Copy install command'}
     >
       <span className="text-[--color-green] select-none">$</span>
       <span className="text-[--color-text] truncate">{INSTALL_CMD}</span>
       <span
         className="ml-1 text-[--color-muted] group-hover:text-[--color-text] transition-colors"
-        aria-label={copied ? 'Copied' : 'Copy'}
+        aria-hidden="true"
       >
         {copied ? (
           <span ref={checkRef}>
