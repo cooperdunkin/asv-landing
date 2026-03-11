@@ -1,0 +1,74 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter/wght.css";
+@import "@fontsource/jetbrains-mono/400.css";
+@import "@fontsource/jetbrains-mono/500.css";
+
+@theme {
+  --color-accent:     #e8d5b0;
+  --color-accent-dim: #c4a97a;
+  --color-bg:         #08090c;
+  --color-bg-2:       #0d0f14;
+  --color-bg-3:       #13161d;
+  --color-border:     #1a1f2e;
+  --color-text:       #eef0f4;
+  --color-muted:      #52596b;
+  --color-green:      #4ade80;
+  --color-red:        #f87171;
+  --font-sans:        'Inter Variable', system-ui, sans-serif;
+  --font-mono:        'JetBrains Mono', monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* Pro pricing card shimmer */
+@property --shimmer-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes shimmer-rotate {
+  from { --shimmer-angle: 0deg; }
+  to   { --shimmer-angle: 360deg; }
+}
+
+.pricing-pro-shimmer {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.pricing-pro-shimmer::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 12px;
+  background: conic-gradient(
+    from var(--shimmer-angle),
+    transparent 70%,
+    rgba(232, 213, 176, 0.35) 80%,
+    rgba(232, 213, 176, 0.12) 90%,
+    transparent 100%
+  );
+  animation: shimmer-rotate 4s linear infinite;
+  z-index: 0;
+}
+
+.pricing-pro-shimmer > * {
+  position: relative;
+  z-index: 1;
+}
